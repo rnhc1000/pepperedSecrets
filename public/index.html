@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        html {
+            font-family: sans-serif;
+            line-height: 2;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        .num {
+            font-size: 20px;
+            color: blue;
+            text-decoration: none;
+            /* border-radius: 50%;
+            border: 2px solid green; */
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id='numbers' class="num">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <!-- <span>1</span><br></span><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span></div></br> -->
+        <button id='btn' class='num' onclick='toggleEvenColor()'>Toggle even number highlighting</button>
+    </div>
+</body>
+
+</html>
+<script>
+
+    function toggleEvenColor() {
+        let container = document.querySelector('#numbers');
+        console.log(container);
+        let spanElements = container.querySelectorAll('li');
+        console.log(spanElements);
+        spanElements.forEach((item) => {
+            item.style.backgroundColor == 'yellow';
+        });
+let a = document.getElementsByClassName('#num');
+console.log(a);
+    }
+</script>

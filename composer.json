@@ -1,0 +1,28 @@
+{
+    "name": "rferreira/misc",
+    "description": "PDO MySQL",
+    "type": "project",
+    "license": "public",
+    "autoload": {
+        "psr-4": {
+            "Rferreira\\Misc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ricardo Ferreira",
+            "email": "rnhc1000@hotmail.com"
+        }
+    ],
+    "require-dev": {
+        "nunomaduro/phpinsights": "^2.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "require": {
+        "php-parallel-lint/php-parallel-lint": "^1.3"
+    }
+}
