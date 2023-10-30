@@ -14,8 +14,6 @@
 declare(strict_types=1);
 
 namespace Rferreira\Misc\classes;
-//use Rferreira\Misc\classes\GetTokenPwd;
-//use Rferreira\Misc\classes\SetPepPwd;
 
 final class GeradorSenhaSegura
 {
@@ -41,10 +39,8 @@ final class GeradorSenhaSegura
 
     public function calculaHash($senhaComPimenta): string
     {
-        $senhaHashed = password_hash($senhaComPimenta, PASSWORD_ARGON2ID);
-        return $senhaHashed;
+        return password_hash($senhaComPimenta, PASSWORD_ARGON2ID);
     }
-
 
     public function passwordVerify($senhaComPimenta, $senhaHashed) : bool
     {

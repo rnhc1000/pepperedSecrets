@@ -12,6 +12,8 @@
 
 session_start();
 
+use Rferreira\Misc\services\validarSenha;
+
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -38,8 +40,6 @@ if (!filter_input(INPUT_POST, "confirmaSenha")) {
     <meta name="author" content="Ricardo Ferreira @rnhc1000">
     <title>Gerador de Credenciais do Sistema</title>
     <link href="../interface/img/favicon.ico" rel="icon" type="image/x-icon">
-    <link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="../interface/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../interface/css/style.css" rel="stylesheet">
     <link href="../interface/css/login.css" rel="stylesheet" type="text/css" />
@@ -47,55 +47,81 @@ if (!filter_input(INPUT_POST, "confirmaSenha")) {
     <script type="text/javascript" src="../interface/js/popper.min.js"></script>
     <script type="text/javascript" src="../interface/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../interface/js/mdb.min.js"></script>
-    <style>
-        html {
-            position: relative;
-            height: 100%;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin-bottom: 0px;
-            display: flex;
-            flex-flow: column;
-            height: 100%;
-
-        }
-    </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-4"></div>
             <div class="col-md-4 bg-light">
-                <form class="form-signin" onsubmit="return validarForm();" method="post" name="cadastrarSenha" action="validarSenha.php">
-                    <h4 class="form-signin-heading text-primary text-center">Cadastro Credenciais do Sistema</h4>
+                <form class="form-signin" onsubmit="return validarForm();"
+                    method="post"
+                    name="cadastrarSenha"
+                    action="validarSenha.php">
+                    <h4 class="form-signin-heading text-primary text-center">Secrets SafeGuard</h4>
                     <div class="form-group">
-                        <small id="infoUsuario" class="form-text text-danger">* Informe um Nome de Usuario... Pode usar CPF, CNPJ, email, Nomes Pŕoprios, Nicknames, etc...</small>
+                        <small id="infoUsuario"
+                        class="form-text text-danger">
+                        *Informe um Nome de Usuario... Pode usar CPF, CNPJ, email,
+                        Nomes Próprios, Nicknames, etc...</small>
                     </div>
                     <div class="form-group">
-                        <input name="nUsuario" type="text" id="inputUsuario" class="form-control" placeholder="Digite o Usuario" required autofocus maxlength="30">
+                        <input name="nUsuario"
+                        type="text"
+                        id="inputUsuario"
+                        class="form-control"
+                        placeholder="Digite o Usuario"
+                        required
+                        autofocus
+                        maxlength="30">
                     </div>
                     <div class="form-group">
-                        <small id="infoSenha" class="form-text text-danger">*A senha deverá conter no mínimo 8 dígitos; Pelo menos uma letra maiuscula; uma minuscula, um caractere especial. Ex: (@,#,$,%,&,*).</small>
+                        <small id="infoSenha"
+                            class="form-text text-danger">
+                            *Mínimo 8 dígitos;
+                            Ao menos uma letra maiuscula;
+                            uma minuscula,
+                            um caractere especial.
+                            Ex: (@,#,$,%,&,*).>
+                    </small>
                     </div>
                     <div class="form-group">
-                        <input name="nSenha" type="password" id="inputSenha" class="form-control" placeholder="Digite sua Senha" required autofocus maxlength="20">
+                        <input name="nSenha"
+                        type="password" id="inputSenha"
+                        class="form-control"
+                        placeholder="Digite sua Senha"
+                        required
+                        autofocus
+                        maxlength="20">
                     </div>
                     <div class="form-group">
-                        <input name="nConfirmaSenha" type="password" id="inputConfirmaSenha" class="form-control" placeholder="Digite Novamente Sua Senha" required maxlength="20">
+                        <input name="nConfirmaSenha"
+                        type="password"
+                        id="inputConfirmaSenha"
+                        class="form-control"
+                        placeholder="Digite Novamente Sua Senha"
+                        required
+                        maxlength="20">
                     </div>
                     <div class="text-right">
-                        <input type="submit" class="btn btn-outline-primary btn-sm" id="btnSubmit" value="Gerar Credenciais">
+                        <input type="submit"
+                        class="btn btn-outline-primary btn-sm"
+                        id="btnSubmit"
+                        value="Gerar Credenciais">
                     </div>
                 </form>
             </div>
-        </div>
     </div>
     </div> <!-- /container -->
-</body>
 
+    <footer class="font-small blue">
+            <div class="text-center font-weight-light">
+                <a href="https://sotech.com.br/">
+                    <strong>©2007-<?php echo date("Y"); ?> Sotech Pagamentos Eletronicos</strong>
+                    <p>Todos os direitos reservados-v22.10</p>
+                    <p>Uso Interno</p>
+                </a>
+            </div>
+    </footer>
+</body>
 </html>
 
 
