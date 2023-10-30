@@ -24,8 +24,6 @@ final class GeradorSenhaSegura
     private string $senhaComPimenta;
     private string $senhaHashed;
 
-
-
     public function __construct($senhaAProteger)
     {
         $this->setSenha($senhaAProteger);
