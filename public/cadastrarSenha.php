@@ -117,7 +117,7 @@ if (!filter_input(INPUT_POST, "confirmaSenha")) {
                 <a href="https://sotech.com.br/">
                     <strong>©2007-<?php echo date("Y"); ?> Sotech Pagamentos Eletronicos</strong>
                     <p>Todos os direitos reservados-v22.10</p>
-                    <p>Uso Interno</p>
+                    <p>Uso Interno Apenas</p>
                 </a>
             </div>
     </footer>
@@ -167,3 +167,14 @@ if (!filter_input(INPUT_POST, "confirmaSenha")) {
         }
     });
 </script>
+
+
+<!-- cnpj: 03.869.606/0003-18
+    nome: Farmer
+   email: finan@donaformula.com
+whatsapp: 71 3041-3333
+     sms: 71 3041-3333
+telefone: 71 3041 3333
+
+insert into estabelecimento (cpnj, nome, email, whatsapp, sms, telefone) values ('03.869.606/0001-56', 'Farmer',
+'71 2042-3333','71 30413333, '71 3041-3333); -->
